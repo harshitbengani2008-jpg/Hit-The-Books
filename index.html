@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hit The Books</title>
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- iOS Support -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Hit The Books">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <h1 class="app-title">📚 Hit The Books</h1>
+
+        <ul>
+            <li onclick="showSection('home')">🏠 Home</li>
+            <li onclick="showSection('pomodoro')">⏱ Pomodoro</li>
+            <li onclick="showSection('notes')">📝 Notes</li>
+            <li onclick="showSection('flashcards')">🎴 Flashcards</li>
+            <li onclick="showSection('quiz')">🧠 Quiz</li>
+            <li onclick="showSection('leaderboard')">🏆 Leaderboard</li>
+            <li onclick="showSection('tracking')">📊 Progress</li>
+            <li onclick="showSection('chatbot')">💬 AI Chatbot</li>
+            <li onclick="showSection('focus')">🎧 Focus Mode</li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+        <!-- Home Section -->
+        <section id="home" class="active">
+            <h2>Welcome to Hit The Books</h2>
+            <p>Your cozy study companion with quizzes, flashcards, notes, Pomodoro, and more.</p>
+        </section>
+
+        <!-- Pomodoro Section -->
+        <section id="pomodoro">
+            <h2>Pomodoro Timer</h2>
+            <div class="timer-display" id="timer">25:00</div>
+
+            <div class="timer-controls">
+                <button onclick="startPomodoro()">Start</button>
+                <button onclick="pausePomodoro()">Pause</button>
+                <button onclick="resetPomodoro()">Reset</button>
+            </div>
+        </section>
+
+        <!-- Notes Section -->
+        <section id="notes">
+            <h2>Your Notes</h2>
+            <textarea id="notesInput" placeholder="Write your notes here..."></textarea>
+            <button onclick="saveNotes()">Save Notes</button>
+        </section>
+
+        <!-- Flashcards Section -->
+        <section id="flashcards">
+            <h2>Flashcards</h2>
+            <div id="flashcard-box">
+                <p id="flashcard-text">Click next to show a flashcard.</p>
+            </div>
+            <button onclick="nextFlashcard()">Next</button>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz">
+            <h2>Quiz</h2>
+            <p id="quiz-question">Click Start to begin the quiz.</p>
+            <input type="text" id="quiz-answer" placeholder="Your answer...">
+            <button onclick="submitAnswer()">Submit</button>
+            <button onclick="startQuiz()">Start Quiz</button>
+        </section>
+
+        <!-- Leaderboard -->
+        <section id="leaderboard">
+            <h2>Leaderboard</h2>
+            <ul id="leaderboard-list"></ul>
+        </section>
+
+        <!-- Progress Tracking -->
+        <section id="tracking">
+            <h2>Your Progress</h2>
+            <p id="progress-data"></p>
+        </section>
+
+        <!-- Chatbot -->
+        <section id="chatbot">
+            <h2>AI Chatbot</h2>
+
+            <div id="chat-window"></div>
+
+            <div class="chat-input-box">
+                <input type="text" id="chatInput" placeholder="Ask something...">
+                <button onclick="sendChat()">Send</button>
+            </div>
+        </section>
+
+        <!-- Focus Mode -->
+        <section id="focus">
+            <h2>Focus Mode</h2>
+            <p>Blocks distractions and keeps you studying.</p>
+            <button onclick="toggleFocus()">Toggle Focus Mode</button>
+        </section>
+
+    </main>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+    <!-- Register PWA Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("service-worker.js");
+        }
+    </script>
+
+</body>
+</html>

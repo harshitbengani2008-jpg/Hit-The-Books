@@ -1,0 +1,229 @@
+/* ------------------------------
+   GLOBAL THEME COLORS
+--------------------------------*/
+:root {
+    --cream-bg: #f7e9d7;
+    --cream-light: #fff5e6;
+    --brown-dark: #4b2e19;
+    --brown-medium: #6b4a2f;
+    --brown-light: #a57a54;
+    --gold: #d4a94e;
+    --text-dark: #3b2b1c;
+}
+
+/* ------------------------------
+   GLOBAL STYLING
+--------------------------------*/
+body {
+    margin: 0;
+    font-family: "Georgia", serif;
+    background: var(--cream-bg);
+    color: var(--text-dark);
+    display: flex;
+}
+
+/* Remove default button styles */
+button {
+    background: var(--brown-medium);
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--brown-dark);
+}
+
+/* ------------------------------
+   SIDEBAR
+--------------------------------*/
+.sidebar {
+    width: 240px;
+    background: var(--brown-dark);
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+.sidebar .app-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: var(--gold);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+    padding: 10px;
+    background: var(--brown-medium);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.sidebar ul li:hover {
+    background: var(--gold);
+    color: var(--brown-dark);
+}
+
+/* ------------------------------
+   MAIN CONTENT
+--------------------------------*/
+main {
+    margin-left: 260px;
+    padding: 30px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+    background: var(--cream-light);
+}
+
+/* Hide non-active sections */
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+/* ------------------------------
+   HOME
+--------------------------------*/
+#home h2 {
+    font-size: 28px;
+    color: var(--brown-dark);
+}
+
+/* ------------------------------
+   POMODORO TIMER
+--------------------------------*/
+.timer-display {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 20px 0;
+    background: var(--cream-bg);
+    padding: 20px;
+    border-radius: 10px;
+    width: 180px;
+    text-align: center;
+    border: 2px solid var(--brown-medium);
+}
+
+/* ------------------------------
+   NOTES
+--------------------------------*/
+#notes textarea {
+    width: 100%;
+    height: 300px;
+    padding: 15px;
+    font-size: 16px;
+    background: var(--cream-bg);
+    border: 2px solid var(--brown-light);
+    border-radius: 8px;
+}
+
+/* ------------------------------
+   FLASHCARDS
+--------------------------------*/
+#flashcard-box {
+    background: var(--cream-bg);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--brown-light);
+    width: 80%;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ------------------------------
+   QUIZ
+--------------------------------*/
+#quiz input {
+    padding: 10px;
+    width: 60%;
+    margin: 10px 0;
+    border-radius: 6px;
+    border: 2px solid var(--brown-light);
+    background: var(--cream-bg);
+}
+
+/* ------------------------------
+   LEADERBOARD
+--------------------------------*/
+#leaderboard-list {
+    padding: 0;
+    list-style: none;
+}
+
+#leaderboard-list li {
+    background: var(--cream-bg);
+    padding: 12px;
+    margin: 8px 0;
+    border-radius: 6px;
+    border: 2px solid var(--brown-medium);
+}
+
+/* ------------------------------
+   CHATBOT
+--------------------------------*/
+#chat-window {
+    width: 100%;
+    height: 400px;
+    background: var(--cream-bg);
+    border: 2px solid var(--brown-light);
+    padding: 15px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.chat-msg-user {
+    background: var(--gold);
+    color: var(--brown-dark);
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: right;
+}
+
+.chat-msg-bot {
+    background: var(--brown-light);
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+.chat-input-box {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.chat-input-box input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid var(--brown-light);
+    border-radius: 6px;
+    background: var(--cream-bg);
+}
+
+/* ------------------------------
+   FOCUS MODE
+--------------------------------*/
+#focus button {
+    font-size: 18px;
+    background: var(--gold);
+    color: var(--brown-dark);
+}
